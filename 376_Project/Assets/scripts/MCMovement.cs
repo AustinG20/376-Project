@@ -17,8 +17,8 @@ public class MCMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        movementSpeed = 3.0f;
-        rotationSpeed = 300.0f;
+        movementSpeed = 1.5f;
+        rotationSpeed = 250.0f;
         animator = GetComponent<Animator>();
     }
 
