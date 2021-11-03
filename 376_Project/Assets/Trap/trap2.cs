@@ -7,6 +7,7 @@ public class trap2 : MonoBehaviour
     public GameObject firetrap;
     private bool controlfire;
     private float timer;
+    public fearfactor ff;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,7 @@ public class trap2 : MonoBehaviour
         {
             firetrap.SetActive(true);
             controlfire = true;
+            ff.scarred(0.5f);
         }
     }
 }

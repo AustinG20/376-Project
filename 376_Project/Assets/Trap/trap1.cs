@@ -11,6 +11,8 @@ public class trap1 : MonoBehaviour
     public GameObject trap;
     public GameObject buttons;
 
+    public fearfactor ff;
+
     public void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "playa")
@@ -20,6 +22,7 @@ public class trap1 : MonoBehaviour
             skeleton.SetActive(true);
             trapcamera.SetActive(true);
             buttons.SetActive(true);
+            ff.scarred(0.5f);
         }
     }
 
