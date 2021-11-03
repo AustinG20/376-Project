@@ -23,14 +23,31 @@ public class MCMovement : MonoBehaviour
 
     void Update()
     {
-         moveHorz = Input.GetAxis("Horizontal");
-         moveVert = Input.GetAxis("Vertical");
+        moveHorz = Input.GetAxis("Horizontal");
+        moveVert = Input.GetAxis("Vertical");
 
-         Vector3 direction = new Vector3(moveHorz, 0, moveVert).normalized;
+        Vector3 direction = new Vector3(moveHorz, 0, moveVert).normalized;
 
-         if (direction.magnitude >= 0.1f)
-         {
+        if (direction.magnitude >= 0.1f)
+        {
             animator.SetBool("isWalking", true);
+
+            if (animator.GetBool("scared"))
+            {
+                speed = 0.5f;
+            }
+
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                animator.SetBool("isRunning", true);
+                animator.SetBool("isWalking", false);
+                speed = 1.0f;
+            }
+            else
+            {
+                animator.SetBool("isRunning", true);
+                animator.SetBool("isRunning", false);
+            }
 
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnVelocity, turnSpeed);
@@ -38,10 +55,29 @@ public class MCMovement : MonoBehaviour
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
-         }
-         else
-         {
-             animator.SetBool("isWalking", false);
-         }
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
+
+        if (Input.GetKey(KeyCode.S) || (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D)))
+        {
+            animator.SetBool("isWalking", false);
+            animator.SetBool("backwardsWalk", true);
+        }
+        else
+        {
+            animator.SetBool("backwardsWalk", false);
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift)){
+            animator.SetBool("isRunning", true);
+            speed = 0.60f;
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
     }
 }
