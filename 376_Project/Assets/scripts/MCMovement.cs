@@ -7,7 +7,7 @@ public class MCMovement : MonoBehaviour
     private float moveVert;
     private float moveHorz;
 
-    Animator animator;
+    public Animator animator;
 
     public CharacterController controller;
     public Transform cam;
@@ -15,6 +15,12 @@ public class MCMovement : MonoBehaviour
     private float speed = 1.0f;
     private float turnSpeed = 0.8f;
     private float turnVelocity;
+
+    public fearfactor ff;
+    public pickup pu;
+
+    public float counter;
+    public float surprisedTimer = 2f;
 
     void Start()
     {
@@ -79,6 +85,36 @@ public class MCMovement : MonoBehaviour
         else
         {
             animator.SetBool("isRunning", false);
+        }
+
+        if (ff.la.vignette.intensity < 0)
+        {
+            counter += Time.deltaTime;
+            speed = 0.0f;
+            animator.SetBool("surprised", true);
+
+            if (counter > surprisedTimer)
+            {
+                speed = 0.5f;
+                animator.SetBool("surprised", false);
+                animator.SetBool("scared", true);
+            }
+            if (pu.hastorch)
+            {
+                animator.SetBool("hasTorch", true);
+            }
+            else
+            {
+                animator.SetBool("hasTorch", false);
+            }
+        }
+        if (pu.hastorch)
+        {
+            animator.SetBool("hasTorch", true);
+        }
+        else
+        {
+            animator.SetBool("hasTorch", false);
         }
     }
 }

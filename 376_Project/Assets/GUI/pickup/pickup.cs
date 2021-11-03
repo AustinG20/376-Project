@@ -7,6 +7,7 @@ public class pickup : MonoBehaviour
     public GameObject button;
     public GameObject torchdown;
     public GameObject torchup;
+    public bool hastorch;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -20,5 +21,6 @@ public class pickup : MonoBehaviour
         button.SetActive(false);
         torchdown.SetActive(false);
         torchup.SetActive(true);
+        hastorch = true;
     }
 }
