@@ -13,7 +13,7 @@ public class MCMovement : MonoBehaviour
     public Transform cam;
 
     private float speed = 1.0f;
-    private float turnSpeed = 0.4f;
+    private float turnSpeed = 0.8f;
     private float turnVelocity;
 
     void Start()
@@ -37,7 +37,7 @@ public class MCMovement : MonoBehaviour
                 speed = 0.5f;
             }
 
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.LeftShift) && animator.GetBool("scared"))
             {
                 animator.SetBool("isRunning", true);
                 animator.SetBool("isWalking", false);
@@ -71,7 +71,7 @@ public class MCMovement : MonoBehaviour
             animator.SetBool("backwardsWalk", false);
         }
 
-        if (Input.GetKey(KeyCode.LeftShift)){
+        if (Input.GetKey(KeyCode.LeftShift) && animator.GetBool("scared")){
             animator.SetBool("isRunning", true);
             speed = 0.60f;
         }
