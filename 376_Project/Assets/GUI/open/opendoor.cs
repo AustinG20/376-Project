@@ -10,6 +10,7 @@ public class opendoor : MonoBehaviour
     //public GameObject bc;
     //public GameObject key;
     public pickupkey puk;
+    public BoxCollider bc;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -23,6 +24,7 @@ public class opendoor : MonoBehaviour
         button.SetActive(false);
         leftdoor.Rotate(0,90,0);
         rightdoor.Rotate(0,-90,0);
-        Debug.Log("problem here");
+        Destroy(bc);
+        //Debug.Log("problem here");
     }
 }

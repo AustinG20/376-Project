@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/last floor chamber.unity
+    guid: 13029f09d0013c147849908e611a0185
+  - enabled: 1
+    path: Assets/Scenes/lock_picking.unity
+    guid: b0364c2d4c941134f96de0b3a0f29a48
   m_configObjects: {}

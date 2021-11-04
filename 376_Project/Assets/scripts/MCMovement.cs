@@ -21,6 +21,7 @@ public class MCMovement : MonoBehaviour
 
     public float counter;
     public float surprisedTimer = 2f;
+    public GameObject sound;
 
     void Start()
     {
@@ -37,7 +38,7 @@ public class MCMovement : MonoBehaviour
         if (direction.magnitude >= 0.1f)
         {
             animator.SetBool("isWalking", true);
-
+            sound.SetActive(true);
             if (animator.GetBool("scared"))
             {
                 speed = 0.5f;
@@ -65,6 +66,7 @@ public class MCMovement : MonoBehaviour
         else
         {
             animator.SetBool("isWalking", false);
+            sound.SetActive(false);
         }
 
         if (Input.GetKey(KeyCode.S) || (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D)))
