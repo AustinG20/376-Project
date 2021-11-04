@@ -12,29 +12,33 @@ public class trap2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timer = 0.0f;
-        controlfire = false;
+        //timer = 0.0f;
+        //controlfire = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
+        /*timer += Time.deltaTime;
 
         if(timer >= 10 && controlfire)
         {
-            firetrap.SetActive(false);
+            firetrap.Stop();
             timer = 0.0f;
             controlfire = false;
         }
+        else if(timer < 10 && controlfire == false)
+        {
+            firetrap.Play();
+            controlfire = true;
+        }*/
     }
-
+    
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "playa" && controlfire == false)
+        if (other.gameObject.tag == "playa")
         {
             firetrap.SetActive(true);
-            controlfire = true;
             ff.scarred(0.5f);
         }
     }

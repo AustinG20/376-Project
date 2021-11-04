@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 2693a5526737bd84183f3edb39d62aaf
+guid: 169c631dc22e531428684848596e4c19
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Surprised
+    second: mixamo.com
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -33,36 +33,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Surprised
-      takeName: mixamo.com
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 43
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -104,7 +75,18 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips: []
+  referencedClips:
+  - 7aafc790292d7544d8594e1360b23f6c
+  - ab0be4f4f87cc4d4e914bae7a8e27512
+  - 3f91e62e91c2eec4d83758adc31cdf61
+  - 495e6f3966126c84a91fff349db8327c
+  - e5e1d7cbd091a504c96834a56ccd52c0
+  - 89a120a78112b864696156580abb369e
+  - bbb66e7385398d8458e0aa2b2a72250a
+  - d8fdb1a81ef57d64caaf12c312136c68
+  - 2693a5526737bd84183f3edb39d62aaf
+  - 49dcbca461fa2884d9721b8b335959c7
+  - 873285a9057e1b04da199373811b4683
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
