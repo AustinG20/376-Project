@@ -29,13 +29,13 @@ public class pin_controller : MonoBehaviour
             Debug.Log("counting");
         }
 
-        if(counter >= 3)
+        if (counter >= 3)
         {
             //Debug.Log("load scene");
             SceneManager.LoadScene("NextLevel");
         }
 
-        if(timer >= 30)
+        if (timer >= 30)
         {
             SceneManager.LoadScene("Gameover");
         }
