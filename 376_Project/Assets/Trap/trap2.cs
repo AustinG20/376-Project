@@ -9,6 +9,12 @@ public class trap2 : MonoBehaviour
     private float timer;
     public fearfactor ff;
 
+    public GameObject trapcamera;
+    public GameObject mccamera;
+    public GameObject buttons;
+    public GameObject mc;
+    public GameObject trap;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,8 +44,22 @@ public class trap2 : MonoBehaviour
     {
         if (other.gameObject.tag == "playa")
         {
-            firetrap.SetActive(true);
             ff.scarred(0.5f);
+            mc.SetActive(false);
+            firetrap.SetActive(true);
+            mccamera.SetActive(false);
+            trapcamera.SetActive(true);
+            buttons.SetActive(true);
         }
+    }
+
+    public void continuegame()
+    {
+
+        mc.SetActive(true);
+        mccamera.SetActive(true);
+        trapcamera.SetActive(false);
+        trap.SetActive(false);
+        buttons.SetActive(false);
     }
 }

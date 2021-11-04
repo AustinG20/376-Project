@@ -17,12 +17,12 @@ public class trap1 : MonoBehaviour
     {
         if(other.gameObject.tag == "playa")
         {
+            ff.scarred(0.5f);
             mc.SetActive(false);
             mccamera.SetActive(false);
             skeleton.SetActive(true);
             trapcamera.SetActive(true);
             buttons.SetActive(true);
-            ff.scarred(0.5f);
         }
     }
 
