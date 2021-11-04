@@ -12,7 +12,7 @@ public class MCMovement : MonoBehaviour
     public CharacterController controller;
     public Transform cam;
 
-    private float speed = 1.0f;
+    public float speed = 1.0f;
     private float turnSpeed = 0.8f;
     private float turnVelocity;
 
