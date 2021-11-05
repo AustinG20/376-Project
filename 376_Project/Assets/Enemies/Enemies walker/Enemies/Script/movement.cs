@@ -24,8 +24,8 @@ public class movement : MonoBehaviour
         speed = 0.5f;
         waypointIndex = 1;
         transform.LookAt(waypoints[waypointIndex].position);
-        minIdle = 10f;
-        maxIdle = 15f;
+        minIdle = 8f;
+        maxIdle = 13f;
         animator.SetBool("idle", false);
         animator.SetBool("isWalking", true);
         selectedIdleTime = Random.Range(minIdle, maxIdle);
@@ -35,14 +35,12 @@ public class movement : MonoBehaviour
     void Update()
     {
         distanceFromWaypoint = Vector3.Distance(transform.position, waypoints[waypointIndex].position);
-        if(distanceFromWaypoint < 0.5f)
+        if(distanceFromWaypoint < 1f)
         {
             idleCounter += Time.deltaTime;
             animator.SetBool("idle", true);
             animator.SetBool("isWalking", false);
             speed = 0f;
-           // Debug.Log(idleCounter);
-            Debug.Log(selectedIdleTime);
 
             if (idleCounter > selectedIdleTime)
             {
@@ -56,9 +54,9 @@ public class movement : MonoBehaviour
             }
         }
         Patrol();
-        if (transform.position.y > 2.0f)
+        if (transform.position.y > 2.2f)
         {
-            //transform.position.y = 2.0f;
+            transform.position = new Vector3(transform.position.x, 2.2f, transform.position.z);
         }
     }
 
