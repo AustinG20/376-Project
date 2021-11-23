@@ -10,6 +10,8 @@ public class openchest : MonoBehaviour
     public GameObject bc;
     public GameObject key;
 
+    public firstfloorconvo ffc;
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "playa")
@@ -24,5 +26,9 @@ public class openchest : MonoBehaviour
         ochest.SetActive(true);
         bc.SetActive(false);
         key.SetActive(true);
+        ffc.camera1.SetActive(false);
+        ffc.camera2.SetActive(true);
+        ffc.bg.SetActive(true);
+        ffc.controltext++;
     }
 }
