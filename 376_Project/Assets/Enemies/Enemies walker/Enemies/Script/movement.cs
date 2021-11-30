@@ -41,7 +41,8 @@ public class movement : MonoBehaviour
             animator.SetBool("idle", true);
             animator.SetBool("isWalking", false);
             speed = 0f;
-           // Debug.Log(idleCounter);
+
+            //Debug.Log(idleCounter);
             Debug.Log(selectedIdleTime);
 
             if (idleCounter > selectedIdleTime)
@@ -58,7 +59,7 @@ public class movement : MonoBehaviour
         Patrol();
         if (transform.position.y > 2.0f)
         {
-            //transform.position.y = 2.0f;
+            transform.position = new Vector3(transform.position.x, 2.2f, transform.position.z);
         }
     }
 
@@ -75,7 +76,7 @@ public class movement : MonoBehaviour
             waypointIndex = 0;
         }
 
-        transform.LookAt(waypoints[waypointIndex].position);
+        //transform.position.y = 2.0f;
     }
 
     void OnTriggerEnter(Collider other)
