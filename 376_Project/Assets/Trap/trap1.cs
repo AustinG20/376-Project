@@ -10,6 +10,7 @@ public class trap1 : MonoBehaviour
     public GameObject trapcamera;
     public GameObject trap;
     public GameObject buttons;
+    public GameObject timer;
 
     public fearfactor ff;
 
@@ -17,6 +18,7 @@ public class trap1 : MonoBehaviour
     {
         if(other.gameObject.tag == "playa")
         {
+            timer.SetActive(false);
             ff.scarred(0.5f);
             mc.SetActive(false);
             mccamera.SetActive(false);
@@ -34,5 +36,6 @@ public class trap1 : MonoBehaviour
         trapcamera.SetActive(false);
         trap.SetActive(false);
         buttons.SetActive(false);
+        timer.SetActive(true);
     }
 }

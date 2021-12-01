@@ -32,6 +32,7 @@ public class pin_controller : MonoBehaviour
         if(counter >= 3)
         {
             //Debug.Log("load scene");
+            TimerScript.NextLevel();
             SceneManager.LoadScene("NextLevel");
         }
 
