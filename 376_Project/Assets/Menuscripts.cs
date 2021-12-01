@@ -10,6 +10,7 @@ public class Menuscripts : MonoBehaviour
     public AudioMixer audioMixer;
 
     public void PlayGame(){
+        // Copy in GameoverScreen.cs in RestartGame()
         SceneManager.LoadScene("last floor chamber"); // TODO: possibly move to next build index in queue (build settings)
     }
 
