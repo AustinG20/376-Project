@@ -35,7 +35,7 @@ public class MCMovement : MonoBehaviour
 
         Vector3 direction = new Vector3(moveHorz, 0, moveVert).normalized;
 
-        if (direction.magnitude >= 0.1f)
+        if (direction.magnitude >= 0.1f && !PauseMenuScript.isPaused)
         {
             animator.SetBool("isWalking", true);
             sound.SetActive(true);
