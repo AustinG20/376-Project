@@ -17,6 +17,7 @@ TagManager:
   - PW - Nature
   - Sword
   - Skeleton
+  - BossSword
   layers:
   - Default
   - TransparentFX

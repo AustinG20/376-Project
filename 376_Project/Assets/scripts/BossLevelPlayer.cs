@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BossLevelPlayer : MonoBehaviour
 {
@@ -32,6 +33,22 @@ public class BossLevelPlayer : MonoBehaviour
 
     private GameObject doorOne;
     private GameObject doorTwo;
+
+    private GameObject finalKey;
+
+    public AI bossAI;
+
+    private bool isBossDead;
+
+    private bool hasFinalKey;
+    public Button keyButton;
+    public GameObject keyButtonUI;
+
+    public Button exitButton;
+    public GameObject exitButtonUI;
+    private GameObject secretExit;
+
+    public GameObject winScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,12 +63,17 @@ public class BossLevelPlayer : MonoBehaviour
         skeletonTime = 5f;
 
         hasKey = false;
+        hasFinalKey = false;
+
+        skeleton = GameObject.Find("Skeleton");
+        stopAt = GameObject.Find("triggerTwo");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(swordsKill == true)
+        isBossDead = bossAI.bossDead;
+        if (swordsKill == true)
         {
             counterOne += Time.deltaTime;
             if(counterOne > killCounter)
@@ -102,6 +124,14 @@ public class BossLevelPlayer : MonoBehaviour
                 skeletonReturn = false;
             }
         }
+
+        currentHP = GameObject.Find("HP").GetComponent<Text>();
+        hp = double.Parse(currentHP.text);
+
+        if(hp <= 0)
+        {
+            SceneManager.LoadScene("outdoor");
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -111,7 +141,7 @@ public class BossLevelPlayer : MonoBehaviour
             currentHP = GameObject.Find("HP").GetComponent<Text>();
             hp = double.Parse(currentHP.text);
 
-            hp -= 5f;
+            hp -= 2f;
 
             currentHP.text = hp.ToString();
         }
@@ -124,9 +154,7 @@ public class BossLevelPlayer : MonoBehaviour
 
         if (other.gameObject.name == "triggerTwo" && skeletonChase == false && skeletonReturn == false)
         {
-            skeleton = GameObject.Find("Skeleton");
             skeletonPosition = skeleton.transform.position;
-            stopAt = GameObject.Find("triggerTwo");
             skeletonChase = true;
         }
 
@@ -136,6 +164,16 @@ public class BossLevelPlayer : MonoBehaviour
             hp = double.Parse(currentHP.text);
 
             hp -= 10f;
+
+            currentHP.text = hp.ToString();
+        }
+
+        if (other.gameObject.tag == "BossSword")
+        {
+            currentHP = GameObject.Find("HP").GetComponent<Text>();
+            hp = double.Parse(currentHP.text);
+
+            hp -= 25f;
 
             currentHP.text = hp.ToString();
         }
@@ -165,5 +203,39 @@ public class BossLevelPlayer : MonoBehaviour
 
             hasKey = false;
         }
+
+        if (other.gameObject.name == "chestTrigger" && isBossDead)
+        {
+            keyButtonUI.SetActive(true);
+
+            keyButton.onClick.AddListener(collectKey);
+        }
+
+        if (other.gameObject.name == "exitTrigger" && hasFinalKey)
+        {
+            exitButtonUI.SetActive(true);
+
+            exitButton.onClick.AddListener(collapseWall);
+        }
+
+        if (other.gameObject.name == "WinTrigger")
+        {
+            winScreen.SetActive(true);
+        }
+    }
+
+    void collectKey()
+    {
+        keyButtonUI.SetActive(false);
+        finalKey = GameObject.Find("finalKey");
+        Destroy(finalKey);
+        hasFinalKey = true;
+    }
+
+    void collapseWall()
+    {
+        exitButtonUI.SetActive(false);
+        secretExit = GameObject.Find("SecretExit");
+        Destroy(secretExit);
     }
 }

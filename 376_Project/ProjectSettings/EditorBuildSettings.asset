@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/lock_picking.unity
     guid: b0364c2d4c941134f96de0b3a0f29a48
+  - enabled: 1
+    path: Assets/Scenes/outdoor.unity
+    guid: 79e1cd040664a5e4896fb3d068d5e9cb
   m_configObjects: {}
