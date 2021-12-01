@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class TimerScript : MonoBehaviour
 {
-
     public Text TimerText;
     public static float GlobalTime = 0;
     public static float LevelTime = 0;
