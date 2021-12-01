@@ -29,7 +29,7 @@ public class AI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         inChaseRange = false;
-        bossSightRange = 15f;
+        bossSightRange = 8f;
         health = 400f;
     }
 
