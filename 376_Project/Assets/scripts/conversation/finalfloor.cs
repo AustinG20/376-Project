@@ -79,6 +79,7 @@ public class finalfloor : MonoBehaviour
                 if (playerchoice == 1)
                 {
                     ft5.SetActive(true);
+                    ft4.SetActive(false);
                     bg.SetActive(false);
                     camera1.SetActive(true);
                     camera2.SetActive(false);
@@ -87,11 +88,12 @@ public class finalfloor : MonoBehaviour
                 if (playerchoice == 2)
                 {
                     ft6.SetActive(true);
-                    bg.SetActive(false);
+                    ft4.SetActive(false);
+                    /*bg.SetActive(false);
                     camera1.SetActive(false);
                     camera2.SetActive(false);
                     deathcamera.SetActive(true);
-                    meteor.SetActive(true);
+                    meteor.SetActive(true);*/
                 }
 
                 break;
