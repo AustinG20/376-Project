@@ -12,15 +12,16 @@ public class MCMovement : MonoBehaviour
     public CharacterController controller;
     public Transform cam;
 
-    public float speed = 1.0f;
-    private float turnSpeed = 0.8f;
+    public float baseSpeed = 2.0f;
+    public float speed;
+    private float turnSpeed = 1f;
     private float turnVelocity;
 
     public fearfactor ff;
     public pickup pu;
 
     public float counter;
-    public float surprisedTimer = 2f;
+    public float surprisedTimer = 1f;
     public GameObject sound;
 
     void Start()
@@ -41,14 +42,14 @@ public class MCMovement : MonoBehaviour
             sound.SetActive(true);
             if (animator.GetBool("scared"))
             {
-                speed = 0.5f;
+                speed = baseSpeed/2;
             }
 
             if (Input.GetKey(KeyCode.LeftShift) && animator.GetBool("scared"))
             {
                 animator.SetBool("isRunning", true);
                 animator.SetBool("isWalking", false);
-                speed = 1.0f;
+                speed = baseSpeed;
             }
             else
             {

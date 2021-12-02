@@ -9,8 +9,8 @@ public class EnemyController : MonoBehaviour
 
     Transform target;
     public NavMeshAgent agent;
-    public fearfactor ff;
-    public GameObject sd;
+    public fearfactor fearFactor;
+    public GameObject restPoint;
     public bool followplayer;
 
 
@@ -34,9 +34,9 @@ public class EnemyController : MonoBehaviour
             if(distance <= agent.stoppingDistance)
             {
                 // attack the target
-                ff.scarred(1.0f);
+                fearFactor.scarred(1.0f);
                 followplayer = false;
-                agent.SetDestination(sd.transform.position);
+                agent.SetDestination(restPoint.transform.position);
                 // face the target
                 FaceTarget();
 
