@@ -11,12 +11,14 @@ public class opendoor : MonoBehaviour
     //public GameObject key;
     public pickupkey puk;
     public BoxCollider bc;
+    public firstfloorconvo ffc;
 
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "playa" && puk.keypick)
         {
             button.SetActive(true);
+            ffc.monsterconnvo();
         }
     }
     public void closed()

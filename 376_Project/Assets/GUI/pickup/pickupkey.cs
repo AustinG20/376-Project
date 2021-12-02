@@ -7,6 +7,7 @@ public class pickupkey : MonoBehaviour
     public GameObject button;
     public GameObject key;
     public bool keypick = false;
+    public firstfloorconvo ffc;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -20,5 +21,6 @@ public class pickupkey : MonoBehaviour
         button.SetActive(false);
         key.SetActive(false);
         keypick = true;
+        ffc.keyconnvo();
     }
 }

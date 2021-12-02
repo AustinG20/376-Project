@@ -18,10 +18,13 @@ public class firstfloorconvo : MonoBehaviour
     public GameObject ft7;
     public GameObject ft8;
     public GameObject ft9;
+    public GameObject ft10;
+    public GameObject ft11;
+    public GameObject ft12;
 
     public GameObject cbg1;
     public GameObject cbg2;
-    public GameObject cbg3;
+   // public GameObject cbg3;
     public GameObject kt1;
     public GameObject kt2;
     public GameObject kt3;
@@ -52,7 +55,7 @@ public class firstfloorconvo : MonoBehaviour
             case 3:
                 cbg1.SetActive(true);
                 cbg2.SetActive(true);
-                cbg3.SetActive(true);
+              //  cbg3.SetActive(true);
                 kt1.SetActive(true);
                 kt2.SetActive(true);
                 kt3.SetActive(true);
@@ -71,12 +74,13 @@ public class firstfloorconvo : MonoBehaviour
                     ft5.SetActive(true);
                    //playerchoice = 0;
                 }
+                /*
                 if (playerchoice == 3)
                 {
                     ft6.SetActive(true);
                     //cbg3.SetActive(true);
                     //playerchoice = 0;
-                }
+                }*/
                 ft3.SetActive(false);
 
                 break;
@@ -97,6 +101,7 @@ public class firstfloorconvo : MonoBehaviour
                     kt5.SetActive(true);
                     playerchoice = 0;
                 }
+                /*
                 if (playerchoice == 3)
                 {
                     ft6.SetActive(true);
@@ -106,7 +111,7 @@ public class firstfloorconvo : MonoBehaviour
                     //cbg3.SetActive(true);
                     playerchoice = 0;
                 }
-
+                */
                 changebutton.SetActive(false);
                 
                 break;
@@ -119,19 +124,20 @@ public class firstfloorconvo : MonoBehaviour
                     ft6.SetActive(false);
                     ft7.SetActive(true);
                     cbg2.SetActive(false);
-                    cbg3.SetActive(false);
+               //     cbg3.SetActive(false);
                     playerchoice = 0;
                 }
                 if (playerchoice == 2)
                 {
                     cbg1.SetActive(false);
-                    cbg3.SetActive(false);
+                   //cbg3.SetActive(false);
                     ft4.SetActive(false);
                     ft5.SetActive(false);
                     ft6.SetActive(false);
                     ft8.SetActive(true);
                     playerchoice = 0;
                 }
+                /*
                 if (playerchoice == 3)
                 {
                     ft4.SetActive(false);
@@ -142,7 +148,7 @@ public class firstfloorconvo : MonoBehaviour
                     cbg2.SetActive(false);
                     playerchoice = 0;
                 }
-
+                */
                 break;
             case 7:
 
@@ -158,6 +164,22 @@ public class firstfloorconvo : MonoBehaviour
                 fairy.SetActive(true);
                 Time.timeScale = 1;
                 break;
+
+            case 9:
+                bg.SetActive(false);
+                camera1.SetActive(true);
+                camera2.SetActive(false);
+                break;
+            case 10:
+                bg.SetActive(false);
+                camera1.SetActive(true);
+                camera2.SetActive(false);
+                break;
+            case 11:
+                bg.SetActive(false);
+                camera1.SetActive(true);
+                camera2.SetActive(false);
+                break;
         }
     }
 
@@ -165,7 +187,7 @@ public class firstfloorconvo : MonoBehaviour
     {
         playerchoice = 1;
         cbg2.SetActive(false);
-        cbg3.SetActive(false);
+       // cbg3.SetActive(false);
         cbg1.SetActive(false);
         //controltext++;
         changebutton.SetActive(true);
@@ -175,10 +197,11 @@ public class firstfloorconvo : MonoBehaviour
         playerchoice = 2;
         cbg2.SetActive(false);
         cbg1.SetActive(false);
-        cbg3.SetActive(false);
+     //   cbg3.SetActive(false);
         //controltext++;
         changebutton.SetActive(true);
     }
+    /*
     public void thirdchoice()
     {
         playerchoice = 3;
@@ -186,6 +209,35 @@ public class firstfloorconvo : MonoBehaviour
         cbg1.SetActive(false);
         cbg3.SetActive(false);
         //controltext++;
+        changebutton.SetActive(true);
+    }
+    */
+    public void trapconnvo()
+    {
+        //ft1.SetActive(false);
+        bg.SetActive(true);
+        ft10.SetActive(true);
+        ft11.SetActive(false);
+        //conversation();
+        changebutton.SetActive(true);
+    }
+
+    public void keyconnvo()
+    {
+        ft1.SetActive(false);
+        //ft10.SetActive(false);
+        bg.SetActive(true);
+        ft11.SetActive(true);
+        //conversation();
+        changebutton.SetActive(true);
+    }
+
+    public void monsterconnvo()
+    {
+        ft10.SetActive(false);
+        bg.SetActive(true);
+        ft12.SetActive(true);
+        //conversation();
         changebutton.SetActive(true);
     }
 }

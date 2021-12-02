@@ -12,6 +12,7 @@ public class trap1 : MonoBehaviour
     public GameObject buttons;
 
     public fearfactor ff;
+    public firstfloorconvo ffc;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -34,5 +35,6 @@ public class trap1 : MonoBehaviour
         trapcamera.SetActive(false);
         trap.SetActive(false);
         buttons.SetActive(false);
+        ffc.trapconnvo();
     }
 }
