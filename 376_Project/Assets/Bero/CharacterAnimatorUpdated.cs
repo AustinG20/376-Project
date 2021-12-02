@@ -28,7 +28,7 @@ public class EnemyControllerUpdated : MonoBehaviour
 
         if (distance <= lookRadius && followplayer)
         {
-
+            FaceTarget();
             agent.SetDestination(target.position);
 
             if (distance <= agent.stoppingDistance)
@@ -38,7 +38,7 @@ public class EnemyControllerUpdated : MonoBehaviour
                 followplayer = false;
                 //agent.SetDestination(restPoint.transform.position);
                 // face the target
-                FaceTarget();
+                
 
             }
         }

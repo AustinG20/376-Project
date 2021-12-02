@@ -28,17 +28,17 @@ public class EnemyController : MonoBehaviour
 
         if (distance <= lookRadius && followplayer)
         {
-           
+            FaceTarget();
             agent.SetDestination(target.position);
 
-            if(distance <= agent.stoppingDistance)
+            if(distance <= agent.stoppingDistance + 1)
             {
                 // attack the target
                 fearFactor.scarred(1.0f);
                 followplayer = false;
-                agent.SetDestination(restPoint.transform.position);
+               // agent.SetDestination(restPoint.transform.position);
                 // face the target
-                FaceTarget();
+                
 
             }
         }
