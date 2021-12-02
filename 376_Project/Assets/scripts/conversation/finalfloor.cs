@@ -95,15 +95,16 @@ public class finalfloor : MonoBehaviour
                 }
 
                 break;
-/*
+
             case 8:
 
                 bg.SetActive(false);
                 camera1.SetActive(false);
                 camera2.SetActive(false);
                 deathcamera.SetActive(true);
+                meteor.SetActive(true);
                 break;
-
+                /*
             case 7:
                 bg.SetActive(false);
                 camera1.SetActive(true);
