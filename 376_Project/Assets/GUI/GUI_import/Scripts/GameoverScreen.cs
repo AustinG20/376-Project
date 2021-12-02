@@ -10,6 +10,6 @@ public class GameoverScreen : MonoBehaviour
     }
 
     public void RestartGame(){
-        SceneManager.LoadScene("last floor chamber"); // TODO: possibly move to next build index in queue (build settings)
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // TODO: possibly move to next build index in queue (build settings)
     }
 }

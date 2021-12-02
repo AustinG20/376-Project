@@ -27,6 +27,9 @@ public class SecondFloorTraps : MonoBehaviour
 
         if (other.gameObject.name == "gargoyleTrigger")
         {
+            GameObject gargoyleTrigger;
+            gargoyleTrigger = GameObject.Find("gargoyleTrigger");
+            gargoyleTrigger.SetActive(false);
             ff.scarred(0.5f);
 
             gargoyleOne = GameObject.Find("gargoyleOne");

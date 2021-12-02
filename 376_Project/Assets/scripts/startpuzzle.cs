@@ -9,7 +9,7 @@ public class startpuzzle : MonoBehaviour
     {
         if(other.gameObject.tag == "playa")
         {
-            SceneManager.LoadScene("lock_picking1");
+            SceneManager.LoadScene("lock_picking 1");
         }
     }
 }
