@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MCMovement : MonoBehaviour
+public class MCMovementFloorTwo : MonoBehaviour
 {
     private float moveVert;
     private float moveHorz;
@@ -12,8 +12,8 @@ public class MCMovement : MonoBehaviour
     public CharacterController controller;
     public Transform cam;
 
-    public float speed = 1.0f;
-    public float scaredSpeed = 0.5f;
+    private float speed = 4.0f;
+    private float scaredSpeed = 2f;
     private float turnSpeed = 0.8f;
     private float turnVelocity;
 
@@ -27,6 +27,7 @@ public class MCMovement : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        animator.SetBool("hasTorch", true);
     }
 
     void Update()
@@ -42,14 +43,14 @@ public class MCMovement : MonoBehaviour
             sound.SetActive(true);
             if (animator.GetBool("scared"))
             {
-                speed = 0.5f;
+                speed = 2f;
             }
 
             if (Input.GetKey(KeyCode.LeftShift) && animator.GetBool("scared"))
             {
                 animator.SetBool("isRunning", true);
                 animator.SetBool("isWalking", false);
-                speed = 1.0f;
+                speed = 3f;
             }
             else
             {
@@ -83,7 +84,7 @@ public class MCMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift) && animator.GetBool("scared"))
         {
             animator.SetBool("isRunning", true);
-            speed = 0.60f;
+            speed = 3f;
         }
         else
         {
@@ -98,7 +99,7 @@ public class MCMovement : MonoBehaviour
 
             if (counter > surprisedTimer)
             {
-                speed = 0.5f;
+                speed = 2f;
                 animator.SetBool("surprised", false);
                 animator.SetBool("scared", true);
             }
