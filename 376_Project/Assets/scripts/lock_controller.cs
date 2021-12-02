@@ -31,7 +31,7 @@ public class lock_controller : MonoBehaviour
 
         if (timer_remaining >= 30)
         {
-            SceneManager.LoadScene("Gameover");
+            SceneManager.LoadScene("last floor chamber");
         }
 
         if (remaining_time > 0)

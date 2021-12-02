@@ -5,26 +5,35 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    public float lookRadius = 3;
+    private float lookRadius = 5f;
 
     Transform target;
     public NavMeshAgent agent;
-    public fearfactor ff;
-    public GameObject sd;
+    public fearfactor fearFactor;
+    public GameObject restPoint;
     public bool followplayer;
+
+    private bool resetting;
+    private float counter;
+    private float resetCounter;
+    private GameObject ghoul;
 
 
     public void Start()
     {
         followplayer = true;
-        target = PlayerManager.instance.player.transform;
+        resetting = false;
+        target = GameObject.Find("Kevin M").transform;
+        counter = 0f;
+        resetCounter = 3f;
 
-        agent = GetComponent<NavMeshAgent>(); 
+        agent = GetComponent<NavMeshAgent>();
+        ghoul = GameObject.Find("Ghoul");
     }
 
     public void Update()
     {
-        float distance = Vector3.Distance(target.position, transform.position);
+        float distance = Vector3.Distance(target.position, this.transform.position);
 
         if (distance <= lookRadius && followplayer)
         {
@@ -34,12 +43,22 @@ public class EnemyController : MonoBehaviour
             if(distance <= agent.stoppingDistance)
             {
                 // attack the target
-                ff.scarred(1.0f);
+                fearFactor.scarred(0.5f);
                 followplayer = false;
-                agent.SetDestination(sd.transform.position);
+                agent.SetDestination(restPoint.transform.position);
                 // face the target
+                resetting = true;
                 FaceTarget();
 
+            }
+        }
+
+        if(resetting == true){
+            counter += Time.deltaTime;
+            if (counter > resetCounter)
+            {
+                followplayer = true;
+                counter = 0f;
             }
         }
     }
@@ -57,6 +76,17 @@ public class EnemyController : MonoBehaviour
     {
        Gizmos.color = Color.red;
        Gizmos.DrawWireSphere(transform.position, lookRadius);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.name == "gateButton")
+        {
+            GameObject gate;
+            gate = GameObject.Find("Gate");
+            ghoul.SetActive(false);
+            Destroy(gate);
+        }
     }
 }
  

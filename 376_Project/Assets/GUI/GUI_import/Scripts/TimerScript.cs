@@ -10,9 +10,10 @@ public class TimerScript : MonoBehaviour
     public Text TimerText;
     public static float GlobalTime = 0;
     public static float LevelTime = 0;
-    public static float StartLevelTime = 200;
+    public static float StartLevelTime = 300;
     public static float middleLevelTime = 400;
     public static float finalLevelTime = 600;
+    public GameObject gameover;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,11 @@ public class TimerScript : MonoBehaviour
     {
         LevelTime -= Time.deltaTime;
         TimerText.text = string.Format("{0:00}:{1:00}", Minutes(), Seconds());
+
+        if(LevelTime <= 0.0f)
+        {
+            gameover.SetActive(true);
+        }
     }
 
     float Minutes(){

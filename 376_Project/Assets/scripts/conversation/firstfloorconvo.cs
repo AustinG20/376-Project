@@ -32,6 +32,8 @@ public class firstfloorconvo : MonoBehaviour
     public GameObject kt5;
     public GameObject kt6;
 
+    public GameObject controln;
+
     public GameObject changebutton;
     public int controltext = 0;
     public int playerchoice = 0;
@@ -229,6 +231,7 @@ public class firstfloorconvo : MonoBehaviour
         bg.SetActive(true);
         ft11.SetActive(true);
         //conversation();
+        controln.SetActive(false);
         changebutton.SetActive(true);
     }
 

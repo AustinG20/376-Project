@@ -6,6 +6,7 @@ using UnityStandardAssets.CinematicEffects;
 public class fearfactor : MonoBehaviour
 {
     public LensAberrations la;
+    public GameObject gameover;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,10 @@ public class fearfactor : MonoBehaviour
     void Update()
     {
         
+        if(la.vignette.intensity <= -3.0f)
+        {
+            gameover.SetActive(true);
+        }
     }
 
     public void scarred(float fear)

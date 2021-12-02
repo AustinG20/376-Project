@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class board_controller : MonoBehaviour
 {
@@ -112,5 +113,6 @@ public class board_controller : MonoBehaviour
             }
         }
         //TODO: puzzle is complete
+        SceneManager.LoadScene("outdoor");
     }
 }
