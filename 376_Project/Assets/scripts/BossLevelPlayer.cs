@@ -49,6 +49,8 @@ public class BossLevelPlayer : MonoBehaviour
     private GameObject secretExit;
 
     public GameObject winScreen;
+    public GameObject died;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -130,7 +132,8 @@ public class BossLevelPlayer : MonoBehaviour
 
         if(hp <= 0)
         {
-            SceneManager.LoadScene("outdoor");
+            died.SetActive(true);
+            //SceneManager.LoadScene("outdoor");
         }
     }
 

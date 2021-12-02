@@ -17,6 +17,7 @@ public class movement : MonoBehaviour
     private float minIdle;
     private float maxIdle;
     private float selectedIdleTime;
+    private GameObject butler;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,7 @@ public class movement : MonoBehaviour
         animator.SetBool("idle", false);
         animator.SetBool("isWalking", true);
         selectedIdleTime = Random.Range(minIdle, maxIdle);
+        butler = GameObject.Find("butler");
     }
 
     // Update is called once per frame
@@ -56,9 +58,10 @@ public class movement : MonoBehaviour
             }
         }
         Patrol();
-        if (transform.position.y > 2.0f)
+        if (butler.transform.position.y > 2.24f)
         {
-            //transform.position.y = 2.0f;
+            Vector3 pos = new Vector3(butler.transform.position.x, 2.24f, butler.transform.position.z);
+            butler.transform.position = pos;
         }
     }
 
