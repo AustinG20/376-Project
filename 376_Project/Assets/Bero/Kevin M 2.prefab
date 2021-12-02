@@ -264,6 +264,7 @@ MonoBehaviour:
   animator: {fileID: 466868423975497361}
   controller: {fileID: 773439954598150351}
   cam: {fileID: 2290288673223315147}
+  baseSpeed: 2
   speed: 1
   ff: {fileID: 7307497458925726799}
   pu: {fileID: 0}
