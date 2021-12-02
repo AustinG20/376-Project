@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class lock_controller : MonoBehaviour
 {
@@ -12,16 +14,26 @@ public class lock_controller : MonoBehaviour
     private float remaining_time = 0;
     private int pin = 0;
     private bool reset_pins = false;
+    public float timer_remaining;
+    [SerializeField] private Text timer;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        timer_remaining = 0.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        timer_remaining += Time.deltaTime;
+        timer.text = "Time Remaining: " + Mathf.Round(30-timer_remaining).ToString();
+
+        if (timer_remaining >= 30)
+        {
+            SceneManager.LoadScene("Gameover");
+        }
+
         if (remaining_time > 0)
         {
             remaining_time -= Time.deltaTime;
@@ -65,6 +77,12 @@ public class lock_controller : MonoBehaviour
         else
         {
             pins_pushed++;
+            // puzzle is solved
+            if (pins_pushed == pin_order.Count)
+            {
+                TimerScript.NextLevel(2);
+                SceneManager.LoadScene("middle floor");
+            }
         }
         
     }

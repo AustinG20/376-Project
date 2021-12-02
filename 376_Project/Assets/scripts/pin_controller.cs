@@ -8,38 +8,17 @@ public class pin_controller : MonoBehaviour
 
     public bool state = false;
     [SerializeField] private float offset;
-    public int counter;
-    public float timer;
 
     // Start is called before the first frame update
     void Start()
     {
-        counter = 0;
-        timer = 0.0f;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-
-        if (Input.GetKeyDown("w"))
-        {
-            counter++;
-            Debug.Log("counting");
-        }
-
-        if(counter >= 3)
-        {
-            //Debug.Log("load scene");
-            TimerScript.NextLevel(2);
-            SceneManager.LoadScene("middle floor");
-        }
-
-        if(timer >= 30)
-        {
-            SceneManager.LoadScene("Gameover");
-        }
+        
     }
 
     public void Toggle()
