@@ -18,6 +18,8 @@ public class EnemyController : MonoBehaviour
     private float resetCounter;
     private GameObject ghoul;
 
+    public GameObject sound;
+    public GameObject gatesound;
 
     public void Start()
     {
@@ -82,10 +84,12 @@ public class EnemyController : MonoBehaviour
     {
         if(other.gameObject.name == "gateButton")
         {
+            sound.SetActive(true);
+            gatesound.SetActive(true);
             GameObject gate;
             gate = GameObject.Find("Gate");
             ghoul.SetActive(false);
-            Destroy(gate);
+            Destroy(gate, 0.3f);
         }
     }
 }

@@ -144,7 +144,7 @@ public class BossLevelPlayer : MonoBehaviour
             currentHP = GameObject.Find("HP").GetComponent<Text>();
             hp = double.Parse(currentHP.text);
 
-            hp -= 2f;
+            hp -= 4f;
 
             currentHP.text = hp.ToString();
         }

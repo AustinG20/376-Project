@@ -30,7 +30,7 @@ public class AI : MonoBehaviour
     private GameObject doorTwo;
 
     public bool bossDead;
-
+    public GameObject bossdeath;
 
     // Start is called before the first frame update
     void Start()
@@ -101,7 +101,8 @@ public class AI : MonoBehaviour
 
             if(health <= 0)
             {
-                Destroy(this.gameObject);
+                bossdeath.SetActive(true);
+                Destroy(this.gameObject, 0.3f);
                 openChest.SetActive(true);
                 closedChest.SetActive(false);
                 bossDead = true;
