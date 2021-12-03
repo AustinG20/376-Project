@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 308496277}
-  m_IndirectSpecularColor: {r: 0.66210914, g: 0.4475097, b: 0.35815442, a: 1}
+  m_IndirectSpecularColor: {r: 0.99999946, g: 0, b: 0.99999946, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2096,6 +2096,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 832081217613608816, guid: bc5191cb6333a874fa2f69426f48e03e, type: 3}
+      propertyPath: m_LookaheadTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 832081217613608816, guid: bc5191cb6333a874fa2f69426f48e03e, type: 3}
+      propertyPath: m_LookaheadSmoothing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 832081217613608816, guid: bc5191cb6333a874fa2f69426f48e03e, type: 3}
+      propertyPath: m_TrackedObjectOffset.y
+      value: 2.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 1469648195230929100, guid: bc5191cb6333a874fa2f69426f48e03e, type: 3}
+      propertyPath: m_MinimumDistanceFromTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993488588429591544, guid: bc5191cb6333a874fa2f69426f48e03e, type: 3}
+      propertyPath: m_FollowOffset.y
+      value: 2.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 1993488588429591544, guid: bc5191cb6333a874fa2f69426f48e03e, type: 3}
+      propertyPath: m_FollowOffset.z
+      value: -3.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 2088927116215250159, guid: bc5191cb6333a874fa2f69426f48e03e, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2088927116215677199, guid: bc5191cb6333a874fa2f69426f48e03e, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -2186,31 +2214,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4500502157173035295, guid: bc5191cb6333a874fa2f69426f48e03e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.57
+      value: 0.033330128
       objectReference: {fileID: 0}
     - target: {fileID: 4500502157173035295, guid: bc5191cb6333a874fa2f69426f48e03e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.45
+      value: 1.5914663
       objectReference: {fileID: 0}
     - target: {fileID: 4500502157173035295, guid: bc5191cb6333a874fa2f69426f48e03e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.7
+      value: -1.6594647
       objectReference: {fileID: 0}
     - target: {fileID: 4500502157173035295, guid: bc5191cb6333a874fa2f69426f48e03e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.99994856
       objectReference: {fileID: 0}
     - target: {fileID: 4500502157173035295, guid: bc5191cb6333a874fa2f69426f48e03e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.0014463053
       objectReference: {fileID: 0}
     - target: {fileID: 4500502157173035295, guid: bc5191cb6333a874fa2f69426f48e03e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9914449
+      value: -0.010040938
       objectReference: {fileID: 0}
     - target: {fileID: 4500502157173035295, guid: bc5191cb6333a874fa2f69426f48e03e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.13052616
+      value: 0.000014523042
       objectReference: {fileID: 0}
     - target: {fileID: 4500502157173035295, guid: bc5191cb6333a874fa2f69426f48e03e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -2219,6 +2247,34 @@ PrefabInstance:
     - target: {fileID: 4500502157658730380, guid: bc5191cb6333a874fa2f69426f48e03e, type: 3}
       propertyPath: speed
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678521763895676407, guid: bc5191cb6333a874fa2f69426f48e03e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.00000031789145
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678521763895676407, guid: bc5191cb6333a874fa2f69426f48e03e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.6200002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678521763895676407, guid: bc5191cb6333a874fa2f69426f48e03e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.3266706
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678521763895676407, guid: bc5191cb6333a874fa2f69426f48e03e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99994856
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678521763895676407, guid: bc5191cb6333a874fa2f69426f48e03e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0014463053
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678521763895676407, guid: bc5191cb6333a874fa2f69426f48e03e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.010040938
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678521763895676407, guid: bc5191cb6333a874fa2f69426f48e03e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000014523042
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc5191cb6333a874fa2f69426f48e03e, type: 3}
@@ -9352,6 +9408,40 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4500502157173035290, guid: bc5191cb6333a874fa2f69426f48e03e, type: 3}
   m_PrefabInstance: {fileID: 286066355}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1325563021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325563019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1325563023
 MonoBehaviour:
   m_ObjectHideFlags: 0
