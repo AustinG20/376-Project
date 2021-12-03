@@ -12,6 +12,7 @@ public class opendoor : MonoBehaviour
     public pickupkey puk;
     public BoxCollider bc;
     public firstfloorconvo ffc;
+    public GameObject keyIndicator;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -27,6 +28,7 @@ public class opendoor : MonoBehaviour
         leftdoor.Rotate(0,90,0);
         rightdoor.Rotate(0,-90,0);
         Destroy(bc);
+        keyIndicator.SetActive(false);
         //Debug.Log("problem here");
     }
 }
