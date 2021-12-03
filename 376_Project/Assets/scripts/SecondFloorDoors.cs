@@ -8,7 +8,7 @@ public class SecondFloorDoors : MonoBehaviour
 
     public GameObject doorOne;
     public GameObject doorTwo;
-
+    public GameObject keyIndicator;
     private bool hasKey;
 
     // Start is called before the first frame update
@@ -32,6 +32,8 @@ public class SecondFloorDoors : MonoBehaviour
 
             Vector3 doorTwoRotation = new Vector3(0, -180, 0);
             doorTwo.transform.eulerAngles = doorTwoRotation;
+
+            keyIndicator.SetActive(false);
         }
     }
 }
