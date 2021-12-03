@@ -6,10 +6,11 @@ public class pickupkey : MonoBehaviour
 {
     public GameObject button;
     public GameObject key;
+    public GameObject keyIndicator;
     public bool keypick = false;
     public firstfloorconvo ffc;
 
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "playa")
         {
@@ -20,6 +21,7 @@ public class pickupkey : MonoBehaviour
     {
         button.SetActive(false);
         key.SetActive(false);
+        keyIndicator.SetActive(true);
         keypick = true;
         ffc.keyconnvo();
     }

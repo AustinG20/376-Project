@@ -31,6 +31,7 @@ public class AI : MonoBehaviour
 
     public bool bossDead;
     public GameObject bossdeath;
+    public GameObject bosswalk;
 
     // Start is called before the first frame update
     void Start()
@@ -85,12 +86,14 @@ public class AI : MonoBehaviour
         }
         else
             agent.isStopped = true;
+            bosswalk.SetActive(false);
     }
 
     private void ChaseKevin()
     {
         //Make the enemy chase kevin
         agent.SetDestination(kevin.transform.position);
+        bosswalk.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider other)

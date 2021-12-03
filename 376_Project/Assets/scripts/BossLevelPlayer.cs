@@ -51,6 +51,8 @@ public class BossLevelPlayer : MonoBehaviour
     public GameObject winScreen;
     public GameObject died;
 
+    public GameObject keyindicator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -144,7 +146,7 @@ public class BossLevelPlayer : MonoBehaviour
             currentHP = GameObject.Find("HP").GetComponent<Text>();
             hp = double.Parse(currentHP.text);
 
-            hp -= 4f;
+            hp -= 3f;
 
             currentHP.text = hp.ToString();
         }
@@ -184,6 +186,7 @@ public class BossLevelPlayer : MonoBehaviour
         if (other.gameObject.name == "bossRoomKey")
         {
             hasKey = true;
+            keyindicator.SetActive(true);
             Destroy(other.gameObject);
         }
 
@@ -205,6 +208,7 @@ public class BossLevelPlayer : MonoBehaviour
             doorTwo.transform.eulerAngles = doorTwoRotation;
 
             hasKey = false;
+            keyindicator.SetActive(false);
         }
 
         if (other.gameObject.name == "chestTrigger" && isBossDead)
@@ -217,7 +221,7 @@ public class BossLevelPlayer : MonoBehaviour
         if (other.gameObject.name == "exitTrigger" && hasFinalKey)
         {
             exitButtonUI.SetActive(true);
-
+            keyindicator.SetActive(false);
             exitButton.onClick.AddListener(collapseWall);
         }
 
@@ -233,6 +237,7 @@ public class BossLevelPlayer : MonoBehaviour
         finalKey = GameObject.Find("finalKey");
         Destroy(finalKey);
         hasFinalKey = true;
+        keyindicator.SetActive(true);
     }
 
     void collapseWall()

@@ -11,6 +11,7 @@ public class openchestFloorTwo : MonoBehaviour
     public GameObject cchest;
     public GameObject bc;
     public GameObject key;
+    public GameObject keyIndicator;
 
     public bool hasKey;
 
@@ -45,5 +46,6 @@ public class openchestFloorTwo : MonoBehaviour
         key.SetActive(false);
         buttonTwo.SetActive(false);
         hasKey = true;
+        keyIndicator.SetActive(true);
     }
 }

@@ -20,6 +20,7 @@ public class EnemyController : MonoBehaviour
 
     public GameObject sound;
     public GameObject gatesound;
+    public GameObject ghoulwalk;
 
     public void Start()
     {
@@ -41,10 +42,11 @@ public class EnemyController : MonoBehaviour
         {
            
             agent.SetDestination(target.position);
-
+            ghoulwalk.SetActive(true);
             if(distance <= agent.stoppingDistance)
             {
                 // attack the target
+                ghoulwalk.SetActive(false);
                 fearFactor.scarred(0.5f);
                 followplayer = false;
                 agent.SetDestination(restPoint.transform.position);

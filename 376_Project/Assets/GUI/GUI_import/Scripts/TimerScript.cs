@@ -9,16 +9,14 @@ public class TimerScript : MonoBehaviour
 
     public Text TimerText;
     public static float GlobalTime = 0;
-    public static float LevelTime = 0;
-    public static float StartLevelTime = 300;
-    public static float middleLevelTime = 400;
-    public static float finalLevelTime = 600;
+    public static float LevelTime = 450;
+
     public GameObject gameover;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        LevelTime = StartLevelTime;
         TimerText.text = string.Format("{0:00}:{1:00}", Minutes(), Seconds());
     }
 
@@ -30,6 +28,8 @@ public class TimerScript : MonoBehaviour
 
         if(LevelTime <= 0.0f)
         {
+            Time.timeScale = 0;
+            LevelTime = 450;
             gameover.SetActive(true);
         }
     }
@@ -42,29 +42,9 @@ public class TimerScript : MonoBehaviour
         return Mathf.FloorToInt(LevelTime % 60);
     }
 
+
     public static void NextLevel(int levelnum){
 
-        switch (levelnum)
-        {
-            case 1:
-                GlobalTime += (StartLevelTime - LevelTime);
-                LevelTime = StartLevelTime;
-                break;
-            case 2:
-                GlobalTime += (middleLevelTime - LevelTime);
-                LevelTime = middleLevelTime;
-                break;
-            case 3:
-                GlobalTime += (finalLevelTime - LevelTime);
-                LevelTime = finalLevelTime;
-                break;
-        }
-        /*
-        GlobalTime += (StartLevelTime - LevelTime);
-        LevelTime = StartLevelTime;
-        print("AFTER NEXT LEVEL TIMER SCRIPT");
-        print("Global time = " + GlobalTime);
-        print("Level time = " + LevelTime);
-        */
+        Debug.Log("Time");
     }
 }
