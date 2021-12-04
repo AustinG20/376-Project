@@ -9,7 +9,7 @@ public class TimerScript : MonoBehaviour
 
     public Text TimerText;
     public static float GlobalTime = 0;
-    public static float LevelTime = 450;
+    public static float LevelTime = 360;
 
     public GameObject gameover;
 

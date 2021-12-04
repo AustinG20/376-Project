@@ -85,8 +85,10 @@ public class AI : MonoBehaviour
             ChaseKevin();
         }
         else
+        {
             agent.isStopped = true;
             bosswalk.SetActive(false);
+        }
     }
 
     private void ChaseKevin()

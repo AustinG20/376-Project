@@ -45,7 +45,7 @@ public class trap2 : MonoBehaviour
     {
         if (other.gameObject.tag == "playa")
         {
-            ff.scarred(0.5f);
+            ff.scarred(1.0f);
             //mc.SetActive(false);
             mm.speed = 0.0f;
             firetrap.SetActive(true);

@@ -22,7 +22,7 @@ public class SecondFloorTraps : MonoBehaviour
 
         if (other.gameObject.tag == "Sword")
         {
-            ff.scarred(0.25f);
+            ff.scarred(0.5f);
         }
 
         if (other.gameObject.name == "gargoyleTrigger")

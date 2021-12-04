@@ -31,10 +31,10 @@ public class openchestFloorTwo : MonoBehaviour
     }
     private void closed()
     {
+        bc.SetActive(false);
         button.SetActive(false);
         cchest.SetActive(false);
         ochest.SetActive(true);
-        bc.SetActive(false);
         key.SetActive(true);
         buttonTwo.SetActive(true);
         buttonTwo.GetComponent<Button>().onClick.AddListener(getKey);
@@ -47,5 +47,6 @@ public class openchestFloorTwo : MonoBehaviour
         buttonTwo.SetActive(false);
         hasKey = true;
         keyIndicator.SetActive(true);
+        button.SetActive(false);
     }
 }

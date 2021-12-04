@@ -135,7 +135,6 @@ public class BossLevelPlayer : MonoBehaviour
         if(hp <= 0)
         {
             died.SetActive(true);
-            //SceneManager.LoadScene("outdoor");
         }
     }
 
@@ -146,7 +145,7 @@ public class BossLevelPlayer : MonoBehaviour
             currentHP = GameObject.Find("HP").GetComponent<Text>();
             hp = double.Parse(currentHP.text);
 
-            hp -= 3f;
+            hp -= 5f;
 
             currentHP.text = hp.ToString();
         }
@@ -168,7 +167,7 @@ public class BossLevelPlayer : MonoBehaviour
             currentHP = GameObject.Find("HP").GetComponent<Text>();
             hp = double.Parse(currentHP.text);
 
-            hp -= 10f;
+            hp -= 15f;
 
             currentHP.text = hp.ToString();
         }

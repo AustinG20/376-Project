@@ -47,7 +47,7 @@ public class EnemyController : MonoBehaviour
             {
                 // attack the target
                 ghoulwalk.SetActive(false);
-                fearFactor.scarred(0.5f);
+                fearFactor.scarred(1.0f);
                 followplayer = false;
                 agent.SetDestination(restPoint.transform.position);
                 // face the target

@@ -85,7 +85,7 @@ public class movement : MonoBehaviour
     {
         if(other.gameObject.tag == "playa")
         {
-            ff.scarred(0.75f);
+            ff.scarred(1.0f);
         }
     }
 }
