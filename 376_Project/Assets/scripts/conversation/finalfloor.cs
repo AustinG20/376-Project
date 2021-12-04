@@ -44,7 +44,6 @@ public class finalfloor : MonoBehaviour
             case 2:
 
                 ft2.SetActive(false);
-                //ft3.SetActive(true);
                 bg.SetActive(false);
                 camera1.SetActive(true);
                 camera2.SetActive(false);
@@ -66,7 +65,6 @@ public class finalfloor : MonoBehaviour
 
             case 5:
 
-                //ft4.SetActive(false);
                 cbg1.SetActive(true);
                 cbg2.SetActive(true);
                 kt1.SetActive(true);
@@ -87,11 +85,6 @@ public class finalfloor : MonoBehaviour
                 if (playerchoice == 2)
                 {
                     ft6.SetActive(true);
-                    bg.SetActive(false);
-                    camera1.SetActive(false);
-                    camera2.SetActive(false);
-                    deathcamera.SetActive(true);
-                    meteor.SetActive(true);
                 }
 
                 break;
@@ -104,13 +97,6 @@ public class finalfloor : MonoBehaviour
                 deathcamera.SetActive(true);
                 meteor.SetActive(true);
                 break;
-                /*
-            case 7:
-                bg.SetActive(false);
-                camera1.SetActive(true);
-                camera2.SetActive(false);
-                break;
-*/
         }
     }
 
